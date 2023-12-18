@@ -12,6 +12,7 @@ from sklearn.svm import SVC
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from flask import jsonify 
+import os
 
 
 app = Flask(__name__)
