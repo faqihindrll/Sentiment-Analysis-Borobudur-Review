@@ -101,8 +101,6 @@
             outline: none;
           }
           
-          
-          
           .new_footer_top .f_widget.about-widget .f_list li a:hover {
             color: #5e2ced;
           }
@@ -342,7 +340,7 @@
 
           <div class="container d-flex">
             <div class="row">
-              <div class="col-lg-6 col-sm-12 d-flex justify-content-center align-items-center word">
+              <div class="col-lg-6 col-sm-12 d-flex justify-content-center align-items-center wordcloud_container">
                 <div class="word"></div>
               </div>
               <div class="col-lg-6 col-sm-12 d-flex">
@@ -455,7 +453,7 @@
       <!-- <section> begin ============================-->
         <section class="pt-5 pt-md-9 mb-6" id="prediksi">
 
-          <div class="bg-holder z-index--1 bottom-0 d-none d-lg-block" style="background-image:url('{{ url_for('static',filename='assets/img/category/shape.png') }} ');opacity:.5;">
+          <div class="bg-holder z-index--1 bottom-0 d-none d-lg-block" style="background-image:url('{{ url_for('static',filename='assets/img/superhero/oval.png') }} ');opacity:.5; background-position: top !important ;">
           </div>
           <!--/.bg-holder-->
   
@@ -649,14 +647,14 @@
                           <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
                               <h3 class="f-title f_600 t_color f_size_18">Contact Us</h3>
                               <div class="f_social_icon">
-                                  <a class=" fab fa-facebook link-300 text-decoration-none fs-lg-1" style="color:white;" target="_blank" href="https://www.youtube.com/@PoliteknikStatistikaSTIS">
+                                  <a class="link-300 text-decoration-none fs-lg-1" style="color:white;" target="_blank" href="https://www.youtube.com/@PoliteknikStatistikaSTIS">
                                     <img src="{{url_for('static', filename='assets/img/youtube.png')}}" width="20" alt="" /></a>
-                                    <a class="fab link-300 text-decoration-none fs-lg-1" style="color:white;" target="_blank" href="https://www.instagram.com/mal3sd3h/">
+                                    <a class="link-300 text-decoration-none fs-lg-1" style="color:white;" target="_blank" href="https://www.instagram.com/mal3sd3h/">
                                       <img src="{{url_for('static', filename='assets/img/instagram.png')}}" width="20" alt="" />
                                     </a>
-                                    <a class="fab link-300 text-decoration-none fs-lg-1"style="color:white;"  target="_blank" href="https://www.facebook.com/PolstatSTIS/">
+                                    <a class="link-300 text-decoration-none fs-lg-1"style="color:white;"  target="_blank" href="https://www.facebook.com/PolstatSTIS/">
                                       <img src="{{url_for('static', filename='assets/img/facebook.png')}}" width="20" alt="" /></a>
-                                      <a class="fab  link-300 text-decoration-none fs-lg-1"style="color:white;"  target="_blank" href="https://www.stis.ac.id/">
+                                      <a class="link-300 text-decoration-none fs-lg-1"style="color:white;"  target="_blank" href="https://www.stis.ac.id/">
                                         <img src="{{url_for('static', filename='assets/img/LogoPolstatSTIS.png')}}" width="20" alt="" /></a>
                               </div>
                           </div>
@@ -724,9 +722,11 @@
         var fill = d3.scale.category20();
 
         var svg = d3.select(selector).append("svg")
+          //  .attr("class", "wordcloud-svg")
             .attr("width", 550)
             .attr("height", 550)
             .append("g")
+          //  .attr("transform", "translate(0,0)");
             .attr("transform", "translate(275,215)");
 
         function draw(words) {
@@ -759,7 +759,7 @@
 
         return {
             update: function(words) {
-                d3.layout.cloud().size([500, 500])
+                d3.layout.cloud().size([600, 600])
                     .words(words)
                     .padding(5)
                     .rotate(function() { return ~~(Math.random() * 2) * 90; })
@@ -795,11 +795,13 @@
     ];
 
     function showNewWords(vis, i) {
-        i = i || 0;
+      i = i || 0;
 
-        vis.update(wordsData);
-        setTimeout(function() { showNewWords(vis, i + 1); }, 2000);
+        
+      vis.update(wordsData);
+      setTimeout(function() { showNewWords(vis, i + 1); }, 2000);
     }
+
 
     var myWordCloud = wordCloud('.word');
     showNewWords(myWordCloud);
