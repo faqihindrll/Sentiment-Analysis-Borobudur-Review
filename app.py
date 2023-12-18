@@ -1,17 +1,17 @@
-# import nltk
-# import re
-# import string
-# import sys
-# import logging
-# from flask import Flask, render_template,url_for,request
-# import pandas as pd
-# import pickle
-# from sklearn.feature_extraction.text import CountVectorizer
-# from sklearn.naive_bayes import MultinomialNB
-# from sklearn.svm import SVC
-# from sklearn.feature_extraction.text import TfidfVectorizer
-# from sklearn.model_selection import train_test_split
-# from flask import jsonify 
+import nltk
+import re
+import string
+import sys
+import logging
+from flask import Flask, render_template,url_for,request
+import pandas as pd
+import pickle
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.svm import SVC
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+from flask import jsonify 
 
 
 app = Flask(__name__)
