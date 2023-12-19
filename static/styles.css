@@ -55,7 +55,7 @@ header h2{
 .wordcloud-container {
     max-width: 100%;
     margin: auto;
-    padding: 1000px; /* Add some padding for better visualization */
+    padding: 100px; /* Add some padding for better visualization */
 }
 
 .wordcloud-svg {

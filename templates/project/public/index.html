@@ -341,6 +341,7 @@
           <div class="container d-flex">
             <div class="row">
               <div class="col-lg-6 col-sm-12 d-flex justify-content-center align-items-center wordcloud_container">
+                <!-- <div class="word"></div> -->
                 <div class="word"></div>
               </div>
               <div class="col-lg-6 col-sm-12 d-flex">
@@ -714,6 +715,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
 
+
+
   <!-- WORD CLOUD -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
@@ -723,11 +726,11 @@
 
         var svg = d3.select(selector).append("svg")
           //  .attr("class", "wordcloud-svg")
-            .attr("width", 550)
-            .attr("height", 550)
+            .attr("width", 250)
+            .attr("height", 250)
             .append("g")
           //  .attr("transform", "translate(0,0)");
-            .attr("transform", "translate(275,215)");
+            .attr("transform", "translate(125,125)");
 
         function draw(words) {
             var cloud = svg.selectAll("g text")
@@ -759,7 +762,7 @@
 
         return {
             update: function(words) {
-                d3.layout.cloud().size([600, 600])
+                d3.layout.cloud().size([200, 200])
                     .words(words)
                     .padding(5)
                     .rotate(function() { return ~~(Math.random() * 2) * 90; })
@@ -772,26 +775,26 @@
     }
 
     var wordsData = [
-        { text: "candi", size: 237/2 },
+        { text: "candi", size: 237/4.2 },
         // { text: "borobudur", size: 127 },
-        { text: "naik", size: 61 },
-        { text: "masuk", size: 59 },
+        { text: "naik", size: 61/2 },
+        { text: "masuk", size: 59/2 },
         // { text: "tempat", size: 58 },
-        { text: "tiket", size: 47 },
-        { text: "waktu", size: 39 },
-        { text: "dunia", size: 38 },
-        { text: "wisata", size: 34 },
-        { text: "hari", size: 32 },
-        { text: "jalan", size: 31 },
-        { text: "atas", size: 29 },
-        { text: "keluar", size: 29 },
-        { text: "pintu", size: 28 },
-        { text: "jauh", size: 27 },
-        { text: "area", size: 27 },
-        { text: "payung", size: 26 },
-        { text: "anak", size: 25 },
-        { text: "harga", size: 25 },
-        { text: "sejarah", size: 25 }
+        { text: "tiket", size: 47/2 },
+        { text: "waktu", size: 39/1.2 },
+        { text: "dunia", size: 38/1.2 },
+        { text: "wisata", size: 34/1.2 },
+        { text: "hari", size: 32/1.2 },
+        { text: "jalan", size: 31/1.2 },
+        { text: "atas", size: 29/1.1 },
+        { text: "keluar", size: 29/1.1 },
+        { text: "pintu", size: 28/1.1 },
+        { text: "jauh", size: 27/1.1 },
+        { text: "area", size: 27/1.1 },
+        { text: "payung", size: 26/1.1 },
+        { text: "anak", size: 25/1.1 },
+        { text: "harga", size: 25/1.1 },
+        { text: "sejarah", size: 25/1.1 }
     ];
 
     function showNewWords(vis, i) {
